@@ -1,10 +1,11 @@
 <script lang="ts">
 	import type { NoteData } from "$lib/types";
-
-    export let data: NoteData;
+  
+  export let id: string;
+  export let data: NoteData;
 </script>
 
-<div class="noteWindow"><a href="/SingleNotePage.html" class="postAsLink">
+<div class="noteWindow"><a href={`/note/${id}`} class="postAsLink">
     <h3>Username</h3>
     <p class="postTime">{data.time}</p>
     <p class="post">{data.text}</p>

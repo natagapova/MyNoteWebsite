@@ -2,16 +2,17 @@
 	import { getFirebase } from "$lib";
 	import type { NoteData } from "$lib/types";
   import Note from "../../components/note.svelte";
-  import { Database, get, getDatabase, ref } from "firebase/database";
+  import { get, getDatabase, ref } from "firebase/database";
 
   const app = getFirebase();
   const db = getDatabase(app);
 
-  let notes: NoteData[] = [];
+  let notes: Record<string, NoteData> = {};
 
   const notesRef = ref(db, "notes");
   get(notesRef).then(snapshot => {
-      notes = snapshot.val().filter(v => !!v);
+    console.log(snapshot.val());
+      notes = snapshot.val();
   });
 </script>
 
@@ -31,20 +32,38 @@
   <div class="cols">
     <div class="left-col cols-item border-right">
         <textarea class="inputWindow" placeholder="Share your thoughts here..."></textarea><br>
+
+        <div class="moodAndButton"> 
+
+        <div class="moodSwitch">
+          <p class="questionAboutMood">How is your mood today?</p>
+          
+          <div class="rateYourMood">
+            <p class="aboutMood">Bad...</p>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+            <p class="aboutMood">Good!</p>
+          </div>
+        </div>
+
         <button class="postButton">Post</button>
+        </div>
         <img class="cat" src="src/images/cat.jpg" alt="A cat">
-        <p class="catText">Here is a cat image in case you are sad today. Cheer up!</p>
+        <p class="catText">Here is a cat image in case you are sad today</p>
+
     </div>
 
     <div class="right-col cols-item">
-        {#each notes as note}
-          <Note data={note}/>
+        {#each Object.entries(notes) as note}
+          <Note id={note[0]} data={note[1]}/>
         {/each}
     </div>
   </div>
 
   <style>
-    .inputWindow {
+.inputWindow {
   margin-top: 0px;
   background-color: rgb(242, 242, 242);
   padding: 15px 20px 10px 20px;
@@ -55,10 +74,94 @@
   height: 200px;
   resize: none;
 }
+.moodSwitch {
+  margin-top: 0px;
+  background-color: rgb(242, 242, 242);
+  padding: 15px 20px 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 2px;
+  width: 40%;
+  height: 47px;
+  resize: none;
+}
+.aboutMood {
+  font-size: 15px;
+  color: rgb(137, 137, 137);
+  margin-top: 7px;
+}
+.questionAboutMood {
+  font-size: 15px;
+}
+.rateYourMood {
+  display: flex;
+  flex-direction: row;
+}
+.moodAndButton {
+  display: flex;
+  flex-direction: row;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin: 15px;
+  margin-top: 2px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #b0c7dd;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #b0c7dd;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .postButton {
   margin-top: 5px;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 25px;
   list-style: none;
   display: block;
   background: #b0c7dd;
@@ -69,6 +172,7 @@
   border: 0;
   transition: 0.3s;
   font-size: 16px;
+  height: 35px;
 }
 .postButton a {
   color: white;
@@ -79,7 +183,7 @@
   color: #b0c7dd;
 }
 .cat{
-  width: 90%;
+  width: 70%;
   border-radius: 20px;
   margin-top: 20px;
 }

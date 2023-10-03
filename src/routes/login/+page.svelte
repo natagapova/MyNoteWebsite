@@ -40,7 +40,7 @@
   width: 40%;
 }
 .loginButton {
-  margin-top: 0px;
+  margin-top: 10px;
   align-items: center;
   list-style: none;
   display: inline-block;

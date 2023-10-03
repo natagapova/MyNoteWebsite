@@ -1,3 +1,7 @@
+<script>
+  import Note from "../../components/note.svelte";
+</script>
+
 <header>
     <nav class="nav-links">
         <ul>
@@ -20,13 +24,9 @@
     </div>
 
     <div class="right-col cols-item">
-        <div class="noteWindow"><a href="/SingleNotePage.html" class="postAsLink">
-            <h3>Username</h3>
-            <p class="postTime">3 hours ago</p>
-            <p class="post">Stupid thoughts of some boring ass person that doesn't have a life so they use this motherfucking website for literally no good reason</p>
-            <button class="likebutton">Like</button>
-        </a>
-        </div>
+        <Note/>
+        <Note/>
+        <Note/>
     </div>
   </div>
 
@@ -90,54 +90,5 @@
 .right-col {
   flex: 70%;
   margin-top: 20px;
-}
-.noteWindow {
-  background-color: rgb(242, 242, 242);
-  margin-left: 20px;
-  padding: 20px 30px 20px 30px;
-  border-radius: 15px;
-  text-decoration: none;
-  color: black;
-  transition: 0.3s;
-}
-.noteWindow:hover {
-  background-color: rgb(234, 234, 234);
-  transition: 0.3s;
-}
-.postAsLink {
-  text-decoration: none;
-  color: black;
-}
-.postTime {
-  font-size: 13px;
-  color: #7c7d80;
-  margin: -4px 0px 5px 0px;
-}
-.post {
-  font-size: 18px;
-}
-.likebutton {
-  padding: 8px 10px 4px 10px;
-  margin-left: auto;
-  margin-top: -15px;
-  font-size: 14px;
-  border-radius: 999px;
-  list-style: none;
-  display: block;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: 0.3s;
-  border: 0;
-  background-color: #000000;
-  color: white;
-}
-.likebutton a {
-  color: white;
-  text-decoration: none;
-}
-.likebutton:hover {
-  background-color: #b0c7dd;
-  transition: 0.3s;
-  color: black;
 }
   </style>

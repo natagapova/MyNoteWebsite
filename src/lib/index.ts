@@ -1,1 +1,16 @@
-// place files you want to import through the `$lib` alias in this folder.
+import { initializeApp, type FirebaseApp } from "firebase/app";
+
+const firebaseConfig = {
+        apiKey: "AIzaSyBokwO39CZYR5dfWv8MDHXw5I75ODDH2G4",
+        authDomain: "frontendretake.firebaseapp.com",
+        databaseURL: "https://frontendretake-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "frontendretake",
+        storageBucket: "frontendretake.appspot.com",
+        messagingSenderId: "965550793515",
+        appId: "1:965550793515:web:b7cce0f0b6386b47b55b6e"
+};
+
+export function getFirebase(): FirebaseApp {
+    const app = initializeApp(firebaseConfig);
+    return app;
+}

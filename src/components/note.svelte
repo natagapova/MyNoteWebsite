@@ -1,7 +1,13 @@
+<script lang="ts">
+	import type { NoteData } from "$lib/types";
+
+    export let data: NoteData;
+</script>
+
 <div class="noteWindow"><a href="/SingleNotePage.html" class="postAsLink">
     <h3>Username</h3>
-    <p class="postTime">3 hours ago</p>
-    <p class="post">Stupid thoughts of some boring ass person that doesn't have a life so they use this motherfucking website for literally no good reason</p>
+    <p class="postTime">{data.time}</p>
+    <p class="post">{data.text}</p>
 </a></div>
 
 <style>

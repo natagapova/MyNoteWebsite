@@ -1,5 +1,18 @@
-<script>
+<script lang="ts">
+	import { getFirebase } from "$lib";
+	import type { NoteData } from "$lib/types";
   import Note from "../../components/note.svelte";
+  import { Database, get, getDatabase, ref } from "firebase/database";
+
+  const app = getFirebase();
+  const db = getDatabase(app);
+
+  let notes: NoteData[] = [];
+
+  const notesRef = ref(db, "notes");
+  get(notesRef).then(snapshot => {
+      notes = snapshot.val().filter(v => !!v);
+  });
 </script>
 
 <header>
@@ -24,9 +37,9 @@
     </div>
 
     <div class="right-col cols-item">
-        <Note/>
-        <Note/>
-        <Note/>
+        {#each notes as note}
+          <Note data={note}/>
+        {/each}
     </div>
   </div>
 

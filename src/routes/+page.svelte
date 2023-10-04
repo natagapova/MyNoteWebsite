@@ -1,19 +1,8 @@
 <svelte:head>
-    <title>Notes App</title>
-    <meta name="description" content="This is your Note Website"/>
+	<title>Notes App</title>
+	<meta name="description" content="This is your Note Website" />
 </svelte:head>
 
-<header>
-	<nav class="nav-links">
-		<ul>
-			<li>
-				<div class="current">MAIN PAGE</div>
-			</li>
-			<li><a href="/NotesPage.html">NOTES</a></li>
-			<li><a href="/LoginPage.html">LOG IN</a></li>
-		</ul>
-	</nav>
-</header>
 <hr />
 
 <main>

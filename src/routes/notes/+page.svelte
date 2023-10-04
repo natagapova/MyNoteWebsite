@@ -17,21 +17,10 @@
 </script>
 
 <svelte:head>
-    <title>My notes</title>
-    <meta name="description" content="Here you can find all your notes"/>
+	<title>My notes</title>
+	<meta name="description" content="Here you can find all your notes" />
 </svelte:head>
 
-<header>
-	<nav class="nav-links">
-		<ul>
-			<li><a href="/MainPage.html">MAIN PAGE</a></li>
-			<li>
-				<div class="current">NOTES</div>
-			</li>
-			<li><a href="/LoginPage.html">LOG IN</a></li>
-		</ul>
-	</nav>
-</header>
 <hr />
 
 <div class="cols">

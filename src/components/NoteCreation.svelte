@@ -44,12 +44,7 @@
 	<p>In the last 3 hours, I...</p>
 	{#each ['drank water', 'had a meal', 'gave myself a rest'] as habit}
 		<label>
-			<input
-				type="checkbox"
-				name="habits"
-				value={habit}
-				bind:group={habits}
-			/>
+			<input type="checkbox" name="habits" value={habit} bind:group={habits} />
 
 			{habit}
 		</label>

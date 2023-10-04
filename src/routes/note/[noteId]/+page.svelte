@@ -19,32 +19,23 @@
 </script>
 
 <svelte:head>
-  {#if note}
-    <title>{note.text}</title>
-    <meta name="description" content={`This is your note from ${note.time}: ${note.text}`}/>
-  {/if}
+	{#if note}
+		<title>{note.text}</title>
+		<meta name="description" content={`This is your note from ${note.time}: ${note.text}`} />
+	{/if}
 </svelte:head>
 
 <div class="sun">
-	<header>
-		<nav class="nav-links">
-			<ul>
-				<li><a href="/MainPage.html">MAIN PAGE</a></li>
-				<li>
-					<div class="current">NOTES</div>
-				</li>
-				<li><a href="/LoginPage.html">LOG IN</a></li>
-			</ul>
-		</nav>
-	</header>
-
 	{#if note}
 		<Note data={note} />
 	{/if}
 
-  <button class="deleteButton" on:click={() => {
-    remove(noteRef).then(() => goto("/notes"));
-  }}>Delete note</button>
+	<button
+		class="deleteButton"
+		on:click={() => {
+			remove(noteRef).then(() => goto('/notes'));
+		}}>Delete note</button
+	>
 </div>
 
 <style>
@@ -56,11 +47,11 @@
 		background-attachment: fixed;
 		height: 100vh;
 	}
-  .deleteButton {
-    border-radius: 10px;
-    font-size: 14px;
-    color: rgb(137, 137, 137);
-    background-color: rgb(247, 247, 247);
-    margin: 7px 5px 2px 5px;
-  }
+	.deleteButton {
+		border-radius: 10px;
+		font-size: 14px;
+		color: rgb(137, 137, 137);
+		background-color: rgb(247, 247, 247);
+		margin: 7px 5px 2px 5px;
+	}
 </style>

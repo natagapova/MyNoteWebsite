@@ -10,14 +10,13 @@
 		<h3>Username</h3>
 		<p class="postTime">{data.time}</p>
 		<p class="post">{data.text}</p>
-    
-    {#if data.status}
-      <p>In the last three hours, I...</p>
-      <p class="habitsStatus">{data.status}</p>
-    {:else}
-      <p>In the last three hours, I haven't done anything</p>
-    {/if}
 
+		{#if data.status}
+			<p>In the last three hours, I...</p>
+			<p class="habitsStatus">{data.status}</p>
+		{:else}
+			<p>In the last three hours, I haven't done anything</p>
+		{/if}
 	</a>
 </div>
 

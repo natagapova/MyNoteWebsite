@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { getFirebase } from '$lib';
 	import type { NoteData } from '$lib/types';
-	import Note from '../../../components/Note.svelte';
+	import Note from '../../../components/note.svelte';
 	import { get, getDatabase, ref, remove } from 'firebase/database';
 
 	const app = getFirebase();
@@ -14,7 +14,6 @@
 	const noteRef = ref(db, 'notes/' + $page.params.noteId);
 	get(noteRef).then((snapshot) => {
 		note = snapshot.val();
-		console.log(note);
 	});
 </script>
 

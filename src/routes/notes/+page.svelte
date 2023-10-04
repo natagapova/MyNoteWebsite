@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { getFirebase } from '$lib';
 	import type { NoteData } from '$lib/types';
-	import Note from '../../components/Note.svelte';
+	import Note from '../../components/note.svelte';
 	import { getDatabase, onValue, ref } from 'firebase/database';
-	import NoteCreation from '../../components/NoteCreation.svelte';
+	import NoteCreation from '../../components/noteCreation.svelte';
 
 	const app = getFirebase();
 	const db = getDatabase(app);

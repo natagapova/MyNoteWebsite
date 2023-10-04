@@ -16,6 +16,11 @@
 	});
 </script>
 
+<svelte:head>
+    <title>My notes</title>
+    <meta name="description" content="Here you can find all your notes"/>
+</svelte:head>
+
 <header>
 	<nav class="nav-links">
 		<ul>

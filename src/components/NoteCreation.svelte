@@ -5,6 +5,7 @@
 
 	let text = '';
 	let mood = true;
+	let habits: string[] = [];
 
 	const app = getFirebase();
 	const db = getDatabase(app);
@@ -16,12 +17,16 @@
 			return;
 		}
 
-		const newNoteRef = push(notesRef);
-		set(newNoteRef, {
+		const noteData: NoteData = {
 			text: text,
 			mood: mood,
 			time: new Date().toString()
-		} as NoteData).then(() => {
+		};
+
+		if (habits.length > 0) noteData.status = habits.join(', ');
+
+		const newNoteRef = push(notesRef);
+		set(newNoteRef, noteData).then(() => {
 			text = '';
 			mood = true;
 		});
@@ -35,6 +40,20 @@
 		placeholder="Share your thoughts here..."
 		bind:value={text}
 	/><br />
+
+	<p>In the last 3 hours, I...</p>
+	{#each ['drank water', 'had a meal', 'gave myself a rest'] as habit}
+		<label>
+			<input
+				type="checkbox"
+				name="habits"
+				value={habit}
+				bind:group={habits}
+			/>
+
+			{habit}
+		</label>
+	{/each}
 
 	<div class="moodAndButton">
 		<div class="moodSwitch">

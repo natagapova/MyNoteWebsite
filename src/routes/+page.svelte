@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>Notes App</title>
+    <meta name="description" content="This is your Note Website"/>
+</svelte:head>
+
 <header>
 	<nav class="nav-links">
 		<ul>

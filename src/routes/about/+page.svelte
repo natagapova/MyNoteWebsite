@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>About us</title>
+    <meta name="description" content="This is a page about our website"/>
+</svelte:head>
+
 <header>
 	<nav class="nav-links">
 		<ul>
@@ -11,15 +16,9 @@
 </header>
 <hr />
 
-<div class="loginwindow">
-	<h1 class="loginMainText">Start your journey today!</h1>
-	<input class="inputLine" type="name" placeholder="Enter your name" /><br />
-	<input class="inputLine" type="password" placeholder="Enter your password" /><br />
-	<p class="privacyPolicy">
-		*By singing up you accept the fact that Front-end is the best course in Innopolis University
-	</p>
-	<button class="loginButton">Log in</button>
-</div>
+<h3>How to use?</h3>
+<p>This website is for creating your notes!! On the "Notes" page you can create and overview your created notes. You can also open each note in case you need a closer look on it or if you want to show it to your friends without showing your other personal data that you may have on this website!</p>
+<p>Please, remember, that MyNote website is created for you to feel comfortable writing your notes and sharing your thoughts just to have an opportunity to recall them later.</p>
 
 <style>
 	.loginwindow {

@@ -17,6 +17,13 @@
 	});
 </script>
 
+<svelte:head>
+  {#if note}
+    <title>{note.text}</title>
+    <meta name="description" content={`This is your note from ${note.time}: ${note.text}`}/>
+  {/if}
+</svelte:head>
+
 <div class="sun">
 	<header>
 		<nav class="nav-links">

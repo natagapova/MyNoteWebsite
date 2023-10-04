@@ -1,5 +1,5 @@
 export interface NoteData {
-    mood: boolean;
-    time: string;
-    text: string;
-};
+	mood: boolean;
+	time: string;
+	text: string;
+}

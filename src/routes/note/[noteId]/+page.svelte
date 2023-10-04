@@ -2,7 +2,7 @@
 	import { page } from "$app/stores";
     import { getFirebase } from "$lib";
 	import type { NoteData } from "$lib/types";
-    import Note from "../../../components/note.svelte";
+    import Note from "../../../components/Note.svelte";
  import { get, getDatabase, ref } from "firebase/database";
 
 

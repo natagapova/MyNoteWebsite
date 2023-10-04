@@ -10,7 +10,11 @@ const firebaseConfig = {
         appId: "1:965550793515:web:b7cce0f0b6386b47b55b6e"
 };
 
+let app: FirebaseApp | undefined;
+
 export function getFirebase(): FirebaseApp {
-    const app = initializeApp(firebaseConfig);
+    if (app) return app;
+
+    app = initializeApp(firebaseConfig);
     return app;
 }

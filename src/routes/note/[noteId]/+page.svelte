@@ -50,6 +50,8 @@
 		justify-content: center;
 		align-items: center;
 		position: relative;
+
+		padding-right: 20px;
 	}
 	.deleteButton {
 		border-radius: 10px;

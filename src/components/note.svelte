@@ -39,7 +39,6 @@
 		text-decoration: none;
 		color: black;
 		transition: 0.3s;
-		width: 40%;
 	}
 	.noteWindow:hover {
 		background-color: rgb(234, 234, 234);

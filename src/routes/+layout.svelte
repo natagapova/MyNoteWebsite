@@ -52,4 +52,36 @@
 	.nav-links ul li a:hover {
 		color: #b0c7dd;
 	}
+	@import url('https://fonts.googleapis.com/css2?family=Gayathri&display=swap" rel="stylesheet');
+	:global(*) {
+		margin: 0;
+		padding: 0;
+		font-family: 'Gayathri', sans-serif;
+		font-size: 20px;
+	}
+	:global(body) {
+		font-family: Arial, sans-serif;
+		background-color: white;
+		margin: 0;
+		padding: 0 20px 0 20px;
+	}
+
+	:global(main) {
+		padding: 20px;
+		text-align: center;
+	}
+	:global(footer) {
+		background-color: white;
+		padding: 10px;
+		color: #7c7d80;
+		text-align: center;
+	}
+	:global(h1) {
+		margin: 0;
+		font-size: 24px;
+	}
+	:global(hr) {
+		border-color: rgb(227, 227, 227);
+		border-width: 1px;
+	}
 </style>

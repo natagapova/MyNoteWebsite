@@ -7,16 +7,25 @@
 
 <div class="noteWindow">
 	<a href={id ? `/note/${id}` : '/notes'} class="postAsLink">
-		<h3>Username</h3>
 		<p class="postTime">{data.time}</p>
 		<p class="post">{data.text}</p>
+		<hr class="postBreak" />
 
-		{#if data.status}
-			<p>In the last three hours, I...</p>
-			<p class="habitsStatus">{data.status}</p>
-		{:else}
-			<p>In the last three hours, I haven't done anything</p>
-		{/if}
+		<div class="window">
+			{#if data.status}
+				<p class="habitsText">In the last three hours, I...</p>
+				<p class="habitsStatus">{data.status}</p>
+			{/if}
+		</div>
+
+		<div class="window">
+			<p class="habitsText">My mood for today:</p>
+			{#if data.mood == true}
+				<p class="habitsStatus">Good!</p>
+			{:else}
+				<p class="habitsStatus">Bad...</p>
+			{/if}
+		</div>
 	</a>
 </div>
 
@@ -30,6 +39,7 @@
 		text-decoration: none;
 		color: black;
 		transition: 0.3s;
+		width: 40%;
 	}
 	.noteWindow:hover {
 		background-color: rgb(234, 234, 234);
@@ -46,5 +56,24 @@
 	}
 	.post {
 		font-size: 18px;
+	}
+	.postBreak {
+		border-color: rgb(240, 240, 240);
+		border-width: 1px;
+		margin: 10px 0 10px 0;
+		width: 10%;
+	}
+	.habitsText {
+		font-size: 15px;
+		color: #7c7d80;
+		margin-right: 5px;
+	}
+	.habitsStatus {
+		font-size: 15px;
+	}
+	.window {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 </style>

@@ -25,16 +25,16 @@
 </svelte:head>
 
 <div class="sun">
-	{#if note}
-		<Note data={note} />
-	{/if}
-
 	<button
 		class="deleteButton"
 		on:click={() => {
 			remove(noteRef).then(() => goto('/notes'));
 		}}>Delete note</button
 	>
+
+	{#if note}
+		<Note data={note} />
+	{/if}
 </div>
 
 <style>
@@ -44,13 +44,30 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
-		height: 100vh;
+		height: calc(100vh - 77px - 20px);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
 	}
 	.deleteButton {
 		border-radius: 10px;
 		font-size: 14px;
 		color: rgb(137, 137, 137);
 		background-color: rgb(247, 247, 247);
-		margin: 7px 5px 2px 5px;
+		padding: 7px 5px 2px 5px;
+		align-self: right;
+		transition: 0.3s;
+		margin: 20px;
+
+		position: absolute;
+		left: 8px;
+		top: 8px;
+	}
+	.deleteButton:hover {
+		background-color: black;
+		color: rgb(247, 247, 247);
+		transition: 0.3s;
 	}
 </style>

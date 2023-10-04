@@ -24,10 +24,8 @@
 <hr />
 
 <div class="cols">
-	<div class="left-col cols-item border-right">
+	<div class="left-col cols-item">
 		<NoteCreation />
-		<img class="cat" src="src/images/cat.jpg" alt="A cat" />
-		<p class="catText">Here is a cat image in case you are sad today</p>
 	</div>
 
 	<div class="right-col cols-item">
@@ -38,27 +36,15 @@
 </div>
 
 <style>
-	.cat {
-		width: 70%;
-		border-radius: 20px;
-		margin-top: 20px;
-	}
-	.catText {
-		font-size: 14px;
-		color: rgb(137, 137, 137);
-		margin-left: 10px;
-	}
-	.border-right {
-		border-right: 1px solid rgb(227, 227, 227);
-		margin-left: 0;
-	}
 	.cols {
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 	}
 	.left-col {
 		flex: 30%;
 		margin-top: 20px;
+		margin-bottom: 50px;
 	}
 	.right-col {
 		flex: 70%;

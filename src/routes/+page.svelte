@@ -16,34 +16,40 @@
 		alt="A woman and a man colleagues"
 	/>
 
-	<div class="textcols">
-		<div class="textcols-item">
-			<h3 style="text-align: left; margin: 0 0 10px 20px;">What for?</h3>
-			<p>
-				Sharing is caring! Let people know what you're up to and what your plans for the week are.
-				Create and share your thoughts on your job tasks or school and university assignments.
-			</p>
-		</div>
+	<h3>What for?</h3>
+	<p>
+		Sharing is caring! Let people know what you're up to and what your plans for the week are.
+		Create and share your thoughts on your job tasks or school and university assignments.
+	</p>
 
-		<div class="textcols-item">
-			<h3 style="text-align: left; margin: 0 0 10px 20px;">Why us?</h3>
-			<p>
-				We are the first and the largest website for creating notes for work or school and sharing
-				them with the world.
-			</p>
-		</div>
-	</div>
+	<h3>Why us?</h3>
+	<p>
+		We are the first and the largest website for creating notes for work or school and sharing them
+		with the world. You can try creating notes yourself!
+	</p>
 </main>
 
-<hr style="border-color: rgb(244, 244, 244); border-width: 1px; margin: 0px 30px;" />
+<hr class="endinghr" />
 
 <footer>
-	<p style="font-size: 15px; text-align: right; margin-right: 20px;">
-		&copy; 2023 MyNote. All rights reserved.
-	</p>
+	<p class="fp">&copy; 2023 MyNote. All rights reserved.</p>
 </footer>
 
 <style>
+	h3 {
+		text-align: left;
+		margin: 10px 0 10px 10px;
+	}
+	.endinghr {
+		border-color: rgb(244, 244, 244);
+		border-width: 1px;
+		margin: 0px 30px;
+	}
+	.fp {
+		font-size: 15px;
+		text-align: right;
+		margin-right: 20px;
+	}
 	.mainpageimage {
 		margin: 10px -20px 0 -20px;
 		max-width: 100%;
@@ -52,10 +58,5 @@
 	p {
 		text-align: left;
 		margin-bottom: 20px;
-	}
-	.textcols {
-		columns: 2;
-		column-gap: 20px;
-		margin-top: 20px;
 	}
 </style>

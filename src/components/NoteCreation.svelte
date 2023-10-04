@@ -41,27 +41,29 @@
 		bind:value={text}
 	/><br />
 
-	<p>In the last 3 hours, I...</p>
-	{#each ['drank water', 'had a meal', 'gave myself a rest'] as habit}
-		<label>
-			<input type="checkbox" name="habits" value={habit} bind:group={habits} />
+	<div class="habitsDiv">
+		<p class="questions">In the last 3 hours, I...</p>
+		<div class="habits">
+			{#each ['drank water', 'had a meal', 'gave myself a rest'] as habit}
+				<label>
+					<input type="checkbox" name="habits" value={habit} bind:group={habits} />
 
-			{habit}
-		</label>
-	{/each}
-
-	<div class="moodAndButton">
-		<div class="moodSwitch">
-			<p class="questionAboutMood">How is your mood today?</p>
-
-			<div class="rateYourMood">
-				<p class="aboutMood">Bad...</p>
-				<label class="switch">
-					<input type="checkbox" bind:checked={mood} />
-					<span class="slider round" />
+					{habit}
 				</label>
-				<p class="aboutMood">Good!</p>
-			</div>
+			{/each}
+		</div>
+	</div>
+
+	<div class="moodSwitch">
+		<p class="questions">How is your mood today?</p>
+
+		<div class="rateYourMood">
+			<p class="aboutMood">Bad...</p>
+			<label class="switch">
+				<input type="checkbox" bind:checked={mood} />
+				<span class="slider round" />
+			</label>
+			<p class="aboutMood">Good!</p>
 		</div>
 
 		<button class="postButton" on:click={() => createNote()}>Post</button>
@@ -87,7 +89,7 @@
 		font-size: 16px;
 		border-radius: 20px;
 		border: 2px;
-		width: 40%;
+		width: 85%;
 		height: 47px;
 		resize: none;
 	}
@@ -96,14 +98,22 @@
 		color: rgb(137, 137, 137);
 		margin-top: 7px;
 	}
-	.questionAboutMood {
+	.questions {
 		font-size: 15px;
 	}
-	.rateYourMood {
+	.habits {
+		font-size: 15px;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 	}
-	.moodAndButton {
+	.habitsDiv {
+		background-color: rgb(242, 242, 242);
+		padding: 15px 20px 10px 20px;
+		border-radius: 10px;
+		width: 85%;
+		margin: 0 0 10px 0;
+	}
+	.rateYourMood {
 		display: flex;
 		flex-direction: row;
 	}
@@ -165,7 +175,7 @@
 	}
 
 	.postButton {
-		margin-top: 5px;
+		margin-top: 15px;
 		margin-left: auto;
 		margin-right: 25px;
 		list-style: none;
@@ -179,6 +189,7 @@
 		transition: 0.3s;
 		font-size: 16px;
 		height: 35px;
+		width: 85%;
 	}
 	.postButton:hover {
 		background-color: black;

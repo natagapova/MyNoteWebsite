@@ -1,3 +1,7 @@
+<script>
+	import colleagues from '../images/mainpagepgoto.jpg';
+</script>
+
 <svelte:head>
 	<title>Notes App</title>
 	<meta name="description" content="This is your Note Website" />
@@ -10,11 +14,7 @@
 		It's simple like that: <br /> Write down. Share.
 	</h1>
 	<p>World's largest platform for creating and sharing notes. Based in Innopolis, Russia.</p>
-	<img
-		class="mainpageimage"
-		src="src/images/mainpagepgoto.jpg"
-		alt="A woman and a man colleagues"
-	/>
+	<img class="mainpageimage" src={colleagues} alt="A woman and a man colleagues" />
 
 	<h3>What for?</h3>
 	<p>

@@ -2,7 +2,7 @@
 
 A website for creating notes and tracking your working mood during the day.
 
-todo: link
+https://mynotewebsite.pages.dev/
 
 ### Running locally
 
